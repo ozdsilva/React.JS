@@ -8,15 +8,25 @@ document.getElementById("root").append(h1)*/
 
 
 //DECLARATIVO
+
+function nomeCompleto(user){
+    return user.nome + ' ' + user.sobrenome
+}
+
 const nome = "Oznir Deodato"
 const usuario = {
     nome: "Oznir",
     sobrenome: "Deodato"
 }
-const elemento = <h1 className="header">Olá {usuario.nome}!</h1>
+const pagina = (
+    <div>
+        <h1 className="header">Olá {nomeCompleto(usuario)}!</h1>
+        <p>Isso é um parágrafo.</p>
+    </div>
+)
 //console.log(elemento)
 
 ReactDOM.render(
-    elemento,
+    pagina,
     document.getElementById("root")
 )
