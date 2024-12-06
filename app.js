@@ -66,7 +66,7 @@ function App(){
         <main>
             <div class="container py-4">
                 <Header/>
-                <Destaque/>
+                <Destaque texto="Isso é um texto!"/>
                 <div class="row align-items-md-stretch">
                     <div class="col-md-6">
                         <Card tema="dark"/>
