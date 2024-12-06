@@ -66,15 +66,10 @@ function App(){
         <main>
             <div class="container py-4">
                 <Header/>
-                <Destaque texto="Isso é um texto!"/>
-                <div class="row align-items-md-stretch">
-                    <div class="col-md-6">
-                        <Card tema="dark"/>
-                    </div>
-                    <div class="col-md-6">
-                        <Card tema="light"/>
-                    </div>
-                </div>
+                <Contador/>
+                <Contador/>
+                <Contador/>
+                <Contador/>
                 <Footer/>
             </div>
         </main>

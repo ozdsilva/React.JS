@@ -25,18 +25,36 @@ function Header(props){
 
 //COMPONENTE DE CLASSE
 
-class Destaque extends React.Component{
+class Contador extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            count: 0
+        }
+    }
+
+    add = ()=>{
+        this.setState(function(prevState){
+            return {count: prevState.count + 1}
+        })
+    }
+
+    sub = ()=>{
+        this.setState(function(prevState){
+            return {count: prevState.count - 1}
+        })
     }
 
     render(){
         return(
             <div class="p-5 mb-4 bg-body-tertiary rounded-3">
                 <div class="container-fluid py-5">
-                    <h1 class="display-5 fw-bold">{this.props.texto}</h1>
-                    <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-                    <button class="btn btn-primary btn-lg" type="button">Saiba mais</button>
+                    <h1 class="display-5 fw-bold">Contador: {this.state.count}</h1>
+                    <p class="col-md-8 fs-4">Aprendendo sobre State (Estado)</p>
+                    <div class="row gap-2">
+                        <button onClick={this.sub} class="col btn btn-danger btn-lg" type="button">Subtrair</button>
+                        <button onClick={this.add} class="col btn btn-success btn-lg" type="button">Adicionar</button>
+                    </div>
                 </div>
              </div>
         )
