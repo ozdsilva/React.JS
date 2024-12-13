@@ -64,7 +64,7 @@ function Conteudo(props){
 function App(){
     return (
         <main>
-            <div class="container py-4">
+            <div className="container py-4">
                 <Header/>
                 <Contador/>
                 <Footer/>
