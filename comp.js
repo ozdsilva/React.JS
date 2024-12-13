@@ -25,7 +25,7 @@ function Header(props){
 
 //COMPONENTE DE CLASSE
 
-class Contador extends React.Component{
+/* class Contador extends React.Component{
     constructor(props){
         super(props)
         this.state = {
@@ -59,7 +59,36 @@ class Contador extends React.Component{
              </div>
         )
     }
-}
+} */
+
+    //COMPONENTE FUNCIONAL
+
+    function Contador(props){
+
+//CRIAR UM STATE
+        const [count, setCount] = React.useState(0)
+
+        function add(){
+            setCount(count + 1)
+        }
+
+        function sub(){
+            setCount(count - 1)
+        }
+
+        return (
+            <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Contador: {count}</h1>
+                    <p class="col-md-8 fs-4">Aprendendo sobre State (Estado)</p>
+                    <div class="row gap-2">
+                        <button onClick={sub} class="col btn btn-danger btn-lg" type="button">Subtrair</button>
+                        <button onClick={add} class="col btn btn-success btn-lg" type="button">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
 function Card(props){
     if(props.tema == "dark") {

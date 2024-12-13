@@ -67,9 +67,6 @@ function App(){
             <div class="container py-4">
                 <Header/>
                 <Contador/>
-                <Contador/>
-                <Contador/>
-                <Contador/>
                 <Footer/>
             </div>
         </main>
