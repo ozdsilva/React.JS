@@ -65,6 +65,8 @@ function Header(props){
 
 function Contador(props){
 
+    let tema = props.tema
+
     //CRIAR UM STATE
     const [count, setCount] = React.useState(0)
     const [nome, setNome] = React.useState('')
@@ -99,8 +101,9 @@ function Contador(props){
 
     console.log('RENDERIZANDO COMPONENTE!')
 
+    if (tema === "dark") {
     return (
-        <div className="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div className="p-5 mb-4 bg-dark rounded-3">
             <div className="container-fluid py-5">
                 <h1 className="display-5 fw-bold">Nome: {nome}</h1>
                 <h1 className="display-5 fw-bold">Contador: {count}</h1>
@@ -112,7 +115,24 @@ function Contador(props){
                 </div>
             </div>
         </div>
+    )}
+    
+    //if (tema !== "dark") {
+    return (
+    <div className="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div className="container-fluid py-5">
+            <h1 className="display-5 fw-bold">Nome: {nome}</h1>
+            <h1 className="display-5 fw-bold">Contador: {count}</h1>
+            <p className="col-md-8 fs-4">Aprendendo sobre State (Estado)</p>
+            <div className="row gap-2">
+                <button onClick={sub} className="col btn btn-danger btn-lg" type="button">Subtrair</button>
+                <button onClick={add} className="col btn btn-success btn-lg" type="button">Adicionar</button>
+                <button onClick={trocaNome} className="col btn btn-primary btn-lg" type="button">Trocar nome</button>
+            </div>
+        </div>
+    </div>
     )
+
 }
 
 function Card(props){
