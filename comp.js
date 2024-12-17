@@ -61,20 +61,30 @@ function Header(props){
     }
 } */
 
+function Explodiu(props) {
+    return (
+        <h1 className="text-danger">EXPLODIU!!!</h1>
+    )
+}
+
 //COMPONENTE FUNCIONAL
 
 function Contador(props){
 
     let tema = props.tema
+    let btnNome = props.btnNome
 
     //CRIAR UM STATE
     const [count, setCount] = React.useState(0)
-    const [nome, setNome] = React.useState('')
+    const [nome, setNome] = React.useState(btnNome)
 
     //EFEITO COLATERAL SOMENTE QUANDO COUNT MUDAR
     React.useEffect(()=>{
         document.title = 'Contador: ' + count
         console.log('ATIVOU EFEITO COLATERAL DO COUNT')
+        if(count >= 5){
+            setNome('Oznir')
+        }
     },[count])
 
     //EFEITO COLATERAL SOMENTE QUANDO COUNT MUDAR
@@ -101,28 +111,26 @@ function Contador(props){
 
     console.log('RENDERIZANDO COMPONENTE!')
 
-    if (tema === "dark") {
+    /*if (count >10) {
     return (
-        <div className="p-5 mb-4 bg-dark rounded-3">
+        <div className="p-5 mb-4 bg-light rounded-3">
             <div className="container-fluid py-5">
-                <h1 className="display-5 fw-bold">Nome: {nome}</h1>
-                <h1 className="display-5 fw-bold">Contador: {count}</h1>
-                <p className="col-md-8 fs-4">Aprendendo sobre State (Estado)</p>
-                <div className="row gap-2">
-                    <button onClick={sub} className="col btn btn-danger btn-lg" type="button">Subtrair</button>
-                    <button onClick={add} className="col btn btn-success btn-lg" type="button">Adicionar</button>
-                    <button onClick={trocaNome} className="col btn btn-primary btn-lg" type="button">Trocar nome</button>
-                </div>
+                <Explodiu/>
             </div>
         </div>
-    )}
+    )}*/
     
     //if (tema !== "dark") {
     return (
     <div className="p-5 mb-4 bg-body-tertiary rounded-3">
         <div className="container-fluid py-5">
-            <h1 className="display-5 fw-bold">Nome: {nome}</h1>
-            <h1 className="display-5 fw-bold">Contador: {count}</h1>
+            {
+                nome && <h1 className="display-5 fw-bold">Nome: {nome}</h1>
+            }
+            
+            {
+                count > 10 ? <Explodiu/> : <h1 className="display-5 fw-bold">Contador: {count}</h1>
+            }
             <p className="col-md-8 fs-4">Aprendendo sobre State (Estado)</p>
             <div className="row gap-2">
                 <button onClick={sub} className="col btn btn-danger btn-lg" type="button">Subtrair</button>

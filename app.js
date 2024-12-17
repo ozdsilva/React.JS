@@ -66,7 +66,8 @@ function App(){
         <main>
             <div className="container py-4">
                 <Header/>
-                <Contador tema=""/>
+                <Contador btnNome={false}/>
+                <Contador/>
                 <Footer/>
             </div>
         </main>
